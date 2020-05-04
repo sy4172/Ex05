@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ex05</string>
+    <string name="a">a</string>
+    <string name="b">b</string>
+    <string name="c">c</string>
+    <string name="show">Show graph equation</string>
+</resources>
