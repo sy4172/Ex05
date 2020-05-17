@@ -12,12 +12,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     WebView viewer;
-    String url, part1, part2, part3, fullUrl, str1, str2, str3, space;
+    String part1, part2, part3, fullUrl, str1, str2, str3, space;
     Float a, b, c;
-    EditText eT1;
-    EditText eT2;
-    EditText eT3;
-    Button show;
+    EditText eT1,eT2,eT3;
     boolean flag, flag1, flag2, flag3;
 
     @Override
@@ -29,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         eT1 = findViewById(R.id.eT1);
         eT2 = findViewById(R.id.eT2);
         eT3 = findViewById(R.id.eT3);
-        show = findViewById(R.id.show);
         flag = flag1 = flag2 = flag3 = false;
         part1 = "https://www.google.com/search?hl=iw&source=hp&ei=w22tXvf8NMmUlwS9hoUo&q=";
         part2 = "&oq=";
