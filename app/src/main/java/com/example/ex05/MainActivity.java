@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
     WebView viewer;
     String part1, part2, part3, fullUrl, strA, strB, strC, space, result;
-    double a, b, c;
     EditText eT1,eT2,eT3;
     boolean flag, flag1, flag2, flag3;
 
@@ -72,55 +71,51 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (flag && flag1 && flag2 && flag3) {
-            a = Double.parseDouble(strA);
-            b = Double.parseDouble(strB);
-            c = Double.parseDouble(strC);
-            result = buildUrl(a,b,c,space);
+            result = buildUrl();
             fullUrl = part1 + result + part2 + result + part3;
             viewer.loadUrl(fullUrl);
         }
     }
 
-    private String buildUrl(double a, double b, double c, String space) {
+    private String buildUrl() {
         String square, url, newB, newC;
         square = "5E2";
         url = "";
 
-        if (b > 0){
-            newB = space+"2B"+b;
+        if (strB.startsWith("-")){
+            newB = strB;
         }
         else{
-            b = Math.abs(b);
-            newB = space+"2D"+b;
+            newB = space+"2B"+strB;
         }
 
-        if(c > 0){
-            newC = space+"2B"+c;
+        if (strC.startsWith("-")){
+            newC = strC;
         }
         else{
-            c = Math.abs(c);
-            newC = space+"2D"+c;
+            newC = space+"2B"+strC;
         }
 
-        if (a == 1){
-            if (b == 0){
-                if (c == 0){
+
+        if (strA.equals("1")){
+            if (strB.equals("0")){
+                if (strC.equals("0")){
                     url = "x"+space+square;
                 }
                 else{
                     url = "x"+space+square+newC;
                 }
             }
-            else if (b == 1){
-                if (c == 0){
+            else if (strB.equals("1")){
+                if (strC.equals("0")){
                     url = "x"+space+square+space+"2B"+"x";
                 }
                 else{
                     url = "x"+space+square+space+"2B"+"x"+newC;
                 }
             }
-            else if (b != 1){
-                if (c == 0){
+            else if (!(strB.equals("1"))){
+                if (strC.equals("0")){
                     url = "x"+space+square+newB+"x";
                 }
                 else{
@@ -129,32 +124,32 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else{
-            if (b == 0){
-                if (c == 0){
-                    url = a+"x"+space+square;
+            if (strB.equals("0")){
+                if (strC.equals("0")){
+                    url = strA+"x"+space+square;
                 }
                 else{
-                    url = a+"x"+space+square+newC;
+                    url = strA+"x"+space+square+newC;
                 }
             }
-            else if (b == 1){
-                if (c == 0){
-                    url = a+"x"+space+square+space+"2B"+"x";
+            else if (strB.equals("1")){
+                if (strC.equals("0")){
+                    url = strA+"x"+space+square+space+"2B"+"x";
                 }
                 else{
-                    url = a+"x"+space+square+space+"2B"+"x"+newC;
+                    url = strA+"x"+space+square+space+"2B"+"x"+newC;
                 }
             }
-            else if (b != 1){
-                if (c == 0){
-                    url = a+"x"+space+square+newB+"x";
+            else if (!(strB.equals("1"))){
+                if (strC.equals("0")){
+                    url = strA+"x"+space+square+newB+"x";
                 }
                 else{
-                    url = a+"x"+space+square+newB+"x"+newC;
+                    url = strA+"x"+space+square+newB+"x"+newC;
                 }
             }
         }
-
+        Toast.makeText(this, url, Toast.LENGTH_LONG).show();
         return url;
     }
 
