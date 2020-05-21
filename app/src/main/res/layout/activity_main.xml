@@ -65,8 +65,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="number|numberSigned|numberDecimal" />
+                    android:inputType="number|numberSigned" />
 
             </LinearLayout>
 
@@ -99,8 +98,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="number|numberSigned|numberDecimal" />
+                    android:inputType="number|numberSigned" />
 
             </LinearLayout>
 
@@ -132,7 +130,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="number|numberSigned|numberDecimal" />
+                    android:inputType="number|numberSigned" />
 
             </LinearLayout>
 
