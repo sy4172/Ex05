@@ -37,21 +37,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
+            android:layout_height="0dp"
+            android:layout_weight="13"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:text="@string/a"
                     android:textAlignment="center"
                     android:textAllCaps="true"
@@ -61,32 +62,31 @@
                 <EditText
                     android:id="@+id/eT1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="numberSigned|numberDecimal" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:importantForAutofill="no"
+                    android:inputType="number|numberSigned|numberDecimal" />
 
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="5" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:text="@string/b"
                     android:textAlignment="center"
                     android:textAllCaps="true"
@@ -96,30 +96,30 @@
                 <EditText
                     android:id="@+id/eT2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="numberSigned|numberDecimal" />
+                    android:importantForAutofill="no"
+                    android:inputType="number|numberSigned|numberDecimal" />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
             </LinearLayout>
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="5" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:text="@string/c"
                     android:textAlignment="center"
                     android:textAllCaps="true"
@@ -129,16 +129,19 @@
                 <EditText
                     android:id="@+id/eT3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:ems="10"
-                    android:inputType="numberSigned|numberDecimal" />
+                    android:inputType="number|numberSigned|numberDecimal" />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
             </LinearLayout>
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,8 +170,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="12" />
-
+            android:layout_weight="10" />
     </LinearLayout>
 
 

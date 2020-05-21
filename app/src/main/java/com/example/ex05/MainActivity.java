@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
     WebView viewer;
-    String part1, part2, part3, fullUrl, str1, str2, str3, space;
-    Float a, b, c;
+    String part1, part2, part3, fullUrl, strA, strB, strC, space, result;
+    double a, b, c;
     EditText eT1,eT2,eT3;
     boolean flag, flag1, flag2, flag3;
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         eT1 = findViewById(R.id.eT1);
         eT2 = findViewById(R.id.eT2);
         eT3 = findViewById(R.id.eT3);
-        flag = flag1 = flag2 = flag3 = false;
         part1 = "https://www.google.com/search?hl=iw&source=hp&ei=w22tXvf8NMmUlwS9hoUo&q=";
         part2 = "&oq=";
         part3 = "&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgQIABAeMgQIABAeOgUIABCDAToGCAAQBxAeOgQIABADOggIABAIEAcQHjoICAAQBxAFEB46BggAEAUQHjoKCAAQBxAFEAoQHjoGCAAQCBAeUJQgWPj4BGCMggVoFnAAeAGAAbMBiAGOH5IBBTI3LjE3mAEAoAEBqgEHZ3dzLXdperABAA&sclient=psy-ab&ved=0ahUKEwi36oeBnZXpAhVJyoUKHT1DAQUQ4dUDCAc&uact=5";
@@ -36,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void check(View view) {
-        str1 = eT1.getText().toString();
-        str2 = eT2.getText().toString();
-        str3 = eT3.getText().toString();
+        strA = eT1.getText().toString();
+        strB = eT2.getText().toString();
+        strC = eT3.getText().toString();
 
-        if (str1.isEmpty() || str2.isEmpty() || str3.isEmpty()){
+        if (strA.isEmpty() || strB.isEmpty() || strC.isEmpty()){
             Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
             flag = false;
         }
@@ -48,14 +47,15 @@ public class MainActivity extends AppCompatActivity {
             flag = true;
         }
 
-        if (str1.equals("0") || str1.equals("-0")){
+        if (strA.equals("0") || strA.equals("-0")){
             Toast.makeText(this, "The parameter A should be bigger or smaller than zero. Try again.", Toast.LENGTH_SHORT).show();
             flag1 = false;
         }
         else{
             flag1 = true;
         }
-        if(str1.equals("0.0")|| str1.equals(".0") || str2.equals("0.0") || str2.equals("-0") || str2.equals(".0") || str3.equals("0.0") || str3.equals("-0") || str3.equals(".0")){
+
+        if(strA.equals("0.0")|| strA.equals(".0") || strB.equals("0.0") || strB.equals("-0") || strB.equals(".0") || strC.equals("0.0") || strC.equals("-0") || strC.equals(".0")){
             Toast.makeText(this, "Try again.", Toast.LENGTH_SHORT).show();
             flag2 = false;
         }
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             flag2 = true;
         }
 
-        if (str1.endsWith("-") || str1.endsWith(".") || str2.endsWith("-") || str2.endsWith(".") || str3.endsWith("-") || str3.endsWith(".")){
+        if (strA.endsWith("-") || strA.endsWith(".") || strB.endsWith("-") || strB.endsWith(".") || strC.endsWith("-") || strC.endsWith(".")){
             Toast.makeText(this, "Try again.", Toast.LENGTH_SHORT).show();
             flag3 = false;
         }
@@ -71,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
             flag3 = true;
         }
 
-
         if (flag && flag1 && flag2 && flag3) {
-            a = Float.parseFloat(str1);
-            b = Float.parseFloat(str2);
-            c = Float.parseFloat(str3);
-            fullUrl = part1 + buildUrl(a,b,c,space) + part2 + buildUrl(a,b,c,space) + part3;
+            a = Double.parseDouble(strA);
+            b = Double.parseDouble(strB);
+            c = Double.parseDouble(strC);
+            result = buildUrl(a,b,c,space);
+            fullUrl = part1 + result + part2 + result + part3;
             viewer.loadUrl(fullUrl);
         }
     }
 
-    private String buildUrl(float a, float b, float c, String space) {
+    private String buildUrl(double a, double b, double c, String space) {
         String square, url, newB, newC;
         square = "5E2";
         url = "";
