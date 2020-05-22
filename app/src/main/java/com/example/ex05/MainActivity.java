@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             flag2 = true;
         }
 
-        if (strA.endsWith("-") || strA.endsWith(".") || strB.endsWith("-") || strB.endsWith(".") || strC.endsWith("-") || strC.endsWith(".")){
+        if (strA.endsWith("-") || strA.endsWith(".") || strA.startsWith(".") || strB.endsWith("-") || strB.endsWith(".") || strB.startsWith(".") || strC.endsWith("-") || strC.endsWith(".") || strC.startsWith(".")){
             Toast.makeText(this, "Try again.", Toast.LENGTH_SHORT).show();
             flag3 = false;
         }
@@ -79,8 +79,42 @@ public class MainActivity extends AppCompatActivity {
 
     private String buildUrl() {
         String square, url, newB, newC;
+        int len;
         square = "5E2";
         url = "";
+
+        if (strA.contains(".") && strA.endsWith("0")){
+            while ((strA.endsWith("0") && !(strA.endsWith(".")))){
+                len = strA.length();
+                strA = strA.substring(0,len-1);
+            }
+            if (strA.endsWith(".")){
+                len = strA.length();
+                strA = strA.substring(0,len-1);
+            }
+        }
+
+        if (strB.contains(".") && strB.endsWith("0")){
+            while ((strB.endsWith("0") && !(strB.endsWith(".")))){
+                len = strB.length();
+                strB = strB.substring(0,len-1);
+            }
+            if (strB.endsWith(".")){
+                len = strB.length();
+                strB = strB.substring(0,len-1);
+            }
+        }
+
+        if (strC.contains(".") && strC.endsWith("0")){
+            while ((strC.endsWith("0") && !(strC.endsWith(".")))){
+                len = strC.length();
+                strC = strC.substring(0,len-1);
+            }
+            if (strC.endsWith(".")){
+                len = strC.length();
+                strC = strC.substring(0,len-1);
+            }
+        }
 
         if (strB.startsWith("-")){
             newB = strB;
@@ -151,6 +185,12 @@ public class MainActivity extends AppCompatActivity {
         }
         Toast.makeText(this, url, Toast.LENGTH_LONG).show();
         return url;
+    }
+
+    public void clear(View view) {
+        eT1.setText("");
+        eT2.setText("");
+        eT3.setText("");
     }
 
 
